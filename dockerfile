@@ -2,7 +2,7 @@
 FROM ubuntu:22.04
 
 # 設置維護者資訊
-LABEL maintainer="your-email@example.com"
+LABEL maintainer="me@albert-yu.com"
 
 # 更新套件並安裝所需套件
 RUN apt-get update && \
@@ -35,4 +35,4 @@ COPY . .
 EXPOSE 5000
 
 # 啟動應用程式
-CMD ["flask", "run", "--host=0.0.0.0"]
+CMD ["python3", "-m", "flask", "run", "--host=0.0.0.0"]
