@@ -23,13 +23,13 @@ ENV VIRTUAL_ENV=/app/venv
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 # 複製需求檔案到工作目錄
-COPY requirements.txt .
+COPY docker-flask/requirements.txt .
 
 # 安裝 Python 套件
 RUN pip3 install --no-cache-dir -r requirements.txt
 
 # 複製應用程式到工作目錄
-COPY . .
+COPY code/. .
 
 # 暴露 Flask 運行的埠
 EXPOSE 5000

@@ -11,13 +11,11 @@ flask --> Docker-flask/Dockerfile
 
 該指令需要安裝Docker CE
 
-下載連結 需要註冊docker.com才能下載
+[下載鏈接](https://www.docker.com/products/docker-desktop) 需要註冊docker.com才能下載
 
 ```
-cd /目錄/Docker-Nginx
-docker build -t docker_nginx . --no-cache
-cd /目錄/Docker-flask
-docker build -t docker_flask . --no-cache
+docker build -t docker_nginx -f docker-nginx/Dockerfile . --no-cache
+docker build -t docker_flask -f docker-flask/Dockerfile . --no-cache
 ```
 
 docker run --name docker_nginx -p 80:80 -idt docker_nginx
