@@ -1,4 +1,4 @@
-# 使用官方 Ubuntu 22.04 image 作為基礎
+# 使用官方 X86 Ubuntu 22.04 image 作為基礎
 FROM ubuntu:22.04
 
 # 設置維護者資訊

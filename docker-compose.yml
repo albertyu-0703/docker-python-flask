@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+  docker-nginx:
+    build:
+      context: .
+      dockerfile: ./docker-nginx/Dockerfile
+    ports:
+      - "80:80"
+    networks:
+      - app-network
+
+  docker-flask:
+    build:
+      context: .
+      dockerfile: ./docker-flask/Dockerfile
+    # 移除端口映射，因為 docker-flask 將與 docker-nginx 共享網絡命名空間
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
